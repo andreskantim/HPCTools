@@ -2,7 +2,7 @@ El programa resuelve el sistema realizando una reducción gausiana, transformand
 
 Para matrices suficientemente grandes, es muy probable que alguno de los elementos de la matriz superior sea muy pequeño; del orden de 1e-7 - 1e-8; de forma que bajo la condicion fabs(x - y) <= epsilon * fabs(x); con const double epsilon = 1e-5, hace al usar elementos double, pese que a que el resultado es correcto, el programa falle.
 
-En esos casos puede reducirse la precision a const double epsilon = 1e-3; mejorando el resultado para la mayoria de matrices, o cambiar el criterio de convergancia, a otro del estilo:
+En esos casos puede reducirse la precision a const double epsilon = 1e-3 (funciona para la mayoria de matrices menores a 2048x2048) mejorando el resultado para la mayoria de matrices, o cambiar el criterio de convergancia, a otro del estilo:
 
 
 int is_nearly_equal(double x, double y)
