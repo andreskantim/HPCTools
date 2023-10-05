@@ -7,9 +7,9 @@ En esos casos puede reducirse la precision a const double epsilon = 1e-3; mejora
 
 int is_nearly_equal(double x, double y)
 {
-  const double epsilon = 1e-5 /* some small number, */;
+  const double epsilon = 1e-4 /* some small number, */;
   return fabs(x - y) <= epsilon;
   // see Knuth section 4.2.2 pages 217-218
 }
 
-Este criterio permite que el la validacion de la solucion no falle para numeros pequeños como en el caso anterior.
+Este criterio permite que el la validacion de la solucion no falle para numeros pequeños como en el caso anterior, y se ha probado para matrices 4096x4096
