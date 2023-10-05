@@ -26,7 +26,7 @@
 
     + This creates a branch in your remote repo the gitlab repo
       labeled (myorigin in this example) linked to your local branch
-    + Future pull}/push operations do not need to specify the remote
+    + Future pull/push operations do not need to specify the remote
       repo: their will work between local/main - myremote/main
 
 4. You must provide access to your remote repo to the two teachers of
