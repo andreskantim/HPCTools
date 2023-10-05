@@ -1,0 +1,15 @@
+El programa resuelve el sistema realizando una reducción gausiana, transformando la matriz a en una matriz triangular superior.
+
+Para matrices suficientemente grandes, es muy probable que alguno de los elementos de la matriz superior sea muy pequeño; del orden de 1e-7 - 1e-8; de forma que bajo la condicion fabs(x - y) <= epsilon * fabs(x); con const double epsilon = 1e-5, hace al usar elementos double, pese que a que el resultado es correcto, el programa falle.
+
+En esos casos puede reducirse la precision a const double epsilon = 1e-3; mejorando el resultado para la mayoria de matrices, o cambiar el criterio de convergancia, a otro del estilo:
+
+
+int is_nearly_equal(double x, double y)
+{
+  const double epsilon = 1e-5 /* some small number, */;
+  return fabs(x - y) <= epsilon;
+  // see Knuth section 4.2.2 pages 217-218
+}
+
+Este criterio permite que el la validacion de la solucion no falle para numeros pequeños como en el caso anterior.
