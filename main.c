@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include "timer.h"
 #include "dgesv.h"
+#include <omp.h>
 
 
 

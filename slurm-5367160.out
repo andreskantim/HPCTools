@@ -1,0 +1,88 @@
+rm -f dgesv *.o *~
+gcc -O3 -march=native -fopenmp     -c -o dgesv.o dgesv.c
+gcc -O3 -march=native -fopenmp     -c -o timer.o timer.c
+gcc -O3 -march=native -fopenmp     -c -o main.o main.c
+gcc   dgesv.o timer.o main.o  -lopenblas -lm -fopenmp   -o dgesv
+Numero de hilos:1
+Time taken by Lapacke dgesv: 111 ms
+Time taken by my dgesv solver: 1994 ms
+Result is ok!
+
+real	0m2.133s
+user	0m2.118s
+sys	0m0.007s
+Numero de hilos:2
+Time taken by Lapacke dgesv: 68 ms
+Time taken by my dgesv solver: 1251 ms
+Result is ok!
+
+real	0m1.346s
+user	0m2.140s
+sys	0m0.014s
+Numero de hilos:4
+Time taken by Lapacke dgesv: 47 ms
+Time taken by my dgesv solver: 859 ms
+Result is ok!
+
+real	0m0.935s
+user	0m2.236s
+sys	0m0.011s
+Numero de hilos:8
+Time taken by Lapacke dgesv: 38 ms
+Time taken by my dgesv solver: 637 ms
+Result is ok!
+
+real	0m0.704s
+user	0m2.243s
+sys	0m0.020s
+Numero de hilos:16
+Time taken by Lapacke dgesv: 36 ms
+Time taken by my dgesv solver: 573 ms
+Result is ok!
+
+real	0m0.638s
+user	0m2.969s
+sys	0m0.034s
+Numero de hilos:32
+Time taken by Lapacke dgesv: 36 ms
+Time taken by my dgesv solver: 549 ms
+Result is ok!
+
+real	0m0.616s
+user	0m4.664s
+sys	0m0.067s
+Numero de hilos:64
+Time taken by Lapacke dgesv: 90 ms
+Time taken by my dgesv solver: 483 ms
+Result is ok!
+
+real	0m0.609s
+user	0m7.605s
+sys	0m0.177s
+
+*****************************************************************************
+*                                                                           *
+*                    JOB EFFICIENCY REPORT (seff 5367160)                   *
+*                                                                           *
+*****************************************************************************
+
+Job ID: 5367160
+Cluster: finisterrae3
+User/Group: curso342/ulc
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 00:00:25
+CPU Efficiency: 4.34% of 00:09:36 core-walltime
+Job Wall-clock time: 00:00:09
+Memory Utilized: 2.62 MB
+Memory Efficiency: 0.06% of 4.00 GB
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ++   Memory Efficiency is too small. Please review the requested memory. ++
+ ++ It seems that you do not need that much memory so we recommend        ++
+ ++ requesting less memory in other similar jobs.                         ++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+*****************************************************************************
+

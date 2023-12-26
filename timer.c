@@ -1,4 +1,6 @@
 #include "timer.h"
+#include <omp.h>
+
 
 long diff_nano(struct timespec *start, struct timespec *end)
 {
