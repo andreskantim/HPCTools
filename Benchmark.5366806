@@ -1,0 +1,105 @@
+slurmstepd: info: Setting TMPDIR to /scratch/5366806. Previous errors about TMPDIR can be discarded
+gcccore/system loaded
+intel/2021.3.0 loaded
+
+imkl/2021.3.0 loaded
+openblas/system loaded
+rm -f dgesv *.o *~
+Optimizacion: icx O=-O0
+
+icx -O0     -c -o dgesv.o dgesv.c
+icx -O0     -c -o timer.o timer.c
+icx -O0     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 87 ms
+Time taken by my dgesv solver: 6084 ms
+Result is ok!
+
+
+rm -f dgesv *.o *~
+Optimizacion: icx O=-O1
+
+icx -O1     -c -o dgesv.o dgesv.c
+icx -O1     -c -o timer.o timer.c
+icx -O1     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 102 ms
+Time taken by my dgesv solver: 2986 ms
+Result is ok!
+
+
+rm -f dgesv *.o *~
+Optimizacion: icx O=-O2
+
+icx -O2     -c -o dgesv.o dgesv.c
+icx -O2     -c -o timer.o timer.c
+icx -O2     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 91 ms
+Time taken by my dgesv solver: 2486 ms
+Result is ok!
+
+
+rm -f dgesv *.o *~
+Optimizacion: icx O=-O3
+
+icx -O3     -c -o dgesv.o dgesv.c
+icx -O3     -c -o timer.o timer.c
+icx -O3     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 75 ms
+Time taken by my dgesv solver: 2616 ms
+Result is ok!
+
+
+rm -f dgesv *.o *~
+Optimizacion: icx O=-O3 -march=native
+
+icx -O3 -march=native     -c -o dgesv.o dgesv.c
+icx -O3 -march=native     -c -o timer.o timer.c
+icx -O3 -march=native     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 91 ms
+Time taken by my dgesv solver: 2225 ms
+Result is ok!
+
+
+rm -f dgesv *.o *~
+Optimizacion: icx O=-Ofast -march=native 
+
+icx -Ofast -march=native     -c -o dgesv.o dgesv.c
+icx -Ofast -march=native     -c -o timer.o timer.c
+icx -Ofast -march=native     -c -o main.o main.c
+icx   dgesv.o timer.o main.o  -qmkl=sequential -lmkl_intel_lp64  -o dgesv
+Time taken by Lapacke dgesv: 103 ms
+Time taken by my dgesv solver: 2300 ms
+Result is ok!
+
+
+
+*****************************************************************************
+*                                                                           *
+*                    JOB EFFICIENCY REPORT (seff 5366806)                   *
+*                                                                           *
+*****************************************************************************
+
+Job ID: 5366806
+Cluster: finisterrae3
+User/Group: curso342/ulc
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:00:22
+CPU Efficiency: 11.46% of 00:03:12 core-walltime
+Job Wall-clock time: 00:00:24
+Memory Utilized: 372.00 KB
+Memory Efficiency: 0.00% of 8.00 GB
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ++   Memory Efficiency is too small. Please review the requested memory. ++
+ ++ It seems that you do not need that much memory so we recommend        ++
+ ++ requesting less memory in other similar jobs.                         ++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+*****************************************************************************
+

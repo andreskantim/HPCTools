@@ -1,0 +1,2096 @@
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: dgesv.c, Line: 11, Column: 34 }
+Function:        my_dgesv
+Args:
+  - Callee:          malloc
+  - String:          ' will not be inlined into '
+  - Caller:          my_dgesv
+    DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: dgesv.c, Line: 49, Column: 3 }
+Function:        my_dgesv
+Args:
+  - Callee:          puts
+  - String:          ' will not be inlined into '
+  - Caller:          my_dgesv
+    DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: dgesv.c, Line: 65, Column: 1 }
+Function:        my_dgesv
+Args:
+  - Callee:          free
+  - String:          ' will not be inlined into '
+  - Caller:          my_dgesv
+    DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 61, Column: 24 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: dgesv.c, Line: 61, Column: 24 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            add
+    DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 55, Column: 16 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 55, Column: 16 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 18 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: dgesv.c, Line: 39, Column: 18 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 20 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            add
+    DebugLoc:        { File: dgesv.c, Line: 39, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            sext
+    DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 15 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 15 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 27, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: dgesv.c, Line: 27, Column: 15 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 28, Column: 19 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: dgesv.c, Line: 28, Column: 19 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 16, Column: 13 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            add
+    DebugLoc:        { File: dgesv.c, Line: 16, Column: 13 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 13 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 13 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: dgesv.c, Line: 41, Column: 14 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: dgesv.c, Line: 41, Column: 14 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 38, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: dgesv.c, Line: 38, Column: 15 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 17 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: dgesv.c, Line: 18, Column: 17 }
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: dgesv.c, Line: 49, Column: 3 }
+Function:        my_dgesv
+Args:
+  - Callee:          puts
+  - String:          ' will not be inlined into '
+  - Caller:          my_dgesv
+    DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            InterleavingNotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          the cost-model indicates that interleaving is not beneficial
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'vectorized loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '1'
+  - String:          ')'
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            NonReductionValueUsedOutsideLoop
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'loop not vectorized: '
+  - String:          value that could not be identified as reduction is used outside the loop
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          loop not vectorized
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'vectorized loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '2'
+  - String:          ')'
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'vectorized loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '4'
+  - String:          ')'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: dgesv.c, Line: 59, Column: 29 }
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            UnsupportedType
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: type '
+  - String:          ' is unsupported by vectorizer'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 41, Column: 24 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 41, Column: 24 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 38, Column: 10 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: dgesv.c, Line: 38, Column: 10 }
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 27, Column: 17 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 27, Column: 17 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 18 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 18 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: dgesv.c, Line: 19, Column: 12 }
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        my_dgesv
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 12 }
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 12 }
+Function:        my_dgesv
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '2'
+  - String:          ' with run-time trip count'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '2'
+  - String:          ' with run-time trip count'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '4'
+  - String:          ' with run-time trip count'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '4'
+  - String:          ' with run-time trip count'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '2'
+  - String:          ' with run-time trip count'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: dgesv.c, Line: 58, Column: 9 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: dgesv.c, Line: 39, Column: 15 }
+Function:        my_dgesv
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            sub
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 20 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            sub
+    DebugLoc:        { File: dgesv.c, Line: 40, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 18 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 18 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+Function:        my_dgesv
+Args:
+  - String:          'hoisting '
+  - Inst:            sub
+    DebugLoc:        { File: dgesv.c, Line: 26, Column: 3 }
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 55, Column: 5 }
+Function:        my_dgesv
+Args:
+  - NumSpills:       '2'
+  - String:          ' spills '
+  - NumReloads:      '4'
+  - String:          ' reloads '
+  - NumFoldedReloads: '4'
+  - String:          ' folded reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 53, Column: 1 }
+Function:        my_dgesv
+Args:
+  - NumSpills:       '3'
+  - String:          ' spills '
+  - NumReloads:      '6'
+  - String:          ' reloads '
+  - NumFoldedReloads: '4'
+  - String:          ' folded reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 38, Column: 3 }
+Function:        my_dgesv
+Args:
+  - NumSpills:       '3'
+  - String:          ' spills '
+  - NumReloads:      '18'
+  - String:          ' reloads '
+  - NumFoldedReloads: '9'
+  - String:          ' folded reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 37, Column: 1 }
+Function:        my_dgesv
+Args:
+  - NumSpills:       '13'
+  - String:          ' spills '
+  - NumFoldedSpills: '5'
+  - String:          ' folded spills '
+  - NumReloads:      '27'
+  - String:          ' reloads '
+  - NumFoldedReloads: '10'
+  - String:          ' folded reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 18, Column: 5 }
+Function:        my_dgesv
+Args:
+  - NumReloads:      '1'
+  - String:          ' reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReload
+DebugLoc:        { File: dgesv.c, Line: 15, Column: 1 }
+Function:        my_dgesv
+Args:
+  - NumSpills:       '6'
+  - String:          ' spills '
+  - NumFoldedSpills: '1'
+  - String:          ' folded spills '
+  - NumReloads:      '28'
+  - String:          ' reloads '
+  - NumFoldedReloads: '5'
+  - String:          ' folded reloads '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReload
+Function:        my_dgesv
+Args:
+  - NumSpills:       '57'
+  - String:          ' spills '
+  - NumFoldedSpills: '6'
+  - String:          ' folded spills '
+  - NumReloads:      '67'
+  - String:          ' reloads '
+  - NumFoldedReloads: '19'
+  - String:          ' folded reloads '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+Function:        my_dgesv
+Args:
+  - NumStackBytes:   '280'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '53'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '13'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '15'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '36'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '14'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '20'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '22'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '35'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '33'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '13'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '30'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '10'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '16'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '22'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '27'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '15'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '26'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '16'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '15'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '31'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: dgesv.c, Line: 0, Column: 0 }
+Function:        my_dgesv
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '10'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: dgesv.c, Line: 9, Column: 0 }
+Function:        my_dgesv
+Args:
+  - NumInstructions: '719'
+  - String:          ' instructions in function'
+...

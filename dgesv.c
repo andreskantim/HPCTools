@@ -3,12 +3,12 @@
 #include <math.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <omp.h>
 
-
-int my_dgesv(int n, double *a, double *b)
+int my_dgesv(int n, double * restrict a, double * restrict b)
 {
 int i,j,k,m;
-double *c = (double *) malloc(sizeof(double) * n);
+double * restrict c = (double *) malloc(sizeof(double) * n);
 double max, d, sum;
 
 
@@ -53,8 +53,10 @@ return 0;
 for(k=0;k<n;k++){//Resuelve el problema para cada columna de b
     for(i=n-1;i>=0;i--) {
         sum = 0.0;
+        //#pragma opm simd reduction(+:sum)//Para gcc
+        #pragma vector always//Para icx
         for(j=i+1;j<n;j++) {
-            sum += a[i*n+j]*b[j*n+k]; 
+            sum = sum +a[i*n+j]*b[j*n+k]; 
         }
         b[i*n+k] = (b[i*n+k]-sum)/a[i*n+i];
     }
