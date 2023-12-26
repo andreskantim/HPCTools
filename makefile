@@ -1,5 +1,5 @@
 # Default Lapacke: Openblas at CESGA
-LDLIBS=-lopenblas -g -lm
+LDLIBS=-lopenblas -g -Wall -Wextra -lm
 
 # Other systems (my Debian boxes, for example)
 #LDLIBS=-llapacke
