@@ -1,15 +1,20 @@
+#Para icx, module load intel imkl openblas
+
+CC = gcc
+
+reportflags.gcc = -fopt-info-optall-optimized 
+reportflags.icx = -qopt-report-phase=vec 
+
+libraryflags.gcc = -lopenblas -g -lm
+libraryflags.icx = -qmkl=sequential -lmkl_intel_lp64
+
+O = -O3 -march=native
+#CFLAGS = $(O) $(reportflags.$(CC)) -Wall -Wextra
+CFLAGS = $(O) -Wall -Wextra
+
 # Default Lapacke: Openblas at CESGA
-LDLIBS=-lopenblas -g -Wall -Wextra -lm
+LDLIBS= $(libraryflags.$(CC)) 
 
-# Other systems (my Debian boxes, for example)
-#LDLIBS=-llapacke
-
-# Intel MKL at CESGA
-# Module needed: imkl
-# => module load openblas
-# LDLIBS for intel compiler: icx (module needed: intel)
-# Just invoke make like this: make CC=icx
-#LDLIBS=-qmkl=sequential -lmkl_intel_lp64
 
 dgesv: dgesv.o timer.o main.o
 

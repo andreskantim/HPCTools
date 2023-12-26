@@ -60,6 +60,7 @@ for(k=0;k<n;k++){//Resuelve el problema para cada columna de b
     }
 }
 
+free(c);
 return 0;
 }
 

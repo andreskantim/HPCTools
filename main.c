@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
   bref = duplicate_matrix(b, size);
 
   //
-  // Using LAPACK dgesv OpenBLAS implementation to solve the system
+  //Using LAPACK dgesv OpenBLAS implementation to solve the system
   //
   int n = size, nrhs = size, lda = size, ldb = size, info;
   int *ipiv = (int *) malloc(sizeof(int) * size);
@@ -103,6 +103,13 @@ int main(int argc, char *argv[]){
     printf("Result is ok!\n");
   else
     printf("Result is wrong!\n");
-
+  
+  free(ipiv);
+  free(a);
+  free(b);
+  free(aref);
+  free(bref);
+  
+  
   return 0;
 }
