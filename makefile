@@ -10,7 +10,7 @@ libraryflags.icx = -qmkl=sequential -lmkl_intel_lp64
 
 O = -O3 -march=native
 #CFLAGS = $(O) $(reportflags.$(CC)) -Wall -Wextra
-CFLAGS = $(O) -Wall -Wextra
+CFLAGS = $(O) #-Wall -Wextra
 
 # Default Lapacke: Openblas at CESGA
 LDLIBS= $(libraryflags.$(CC)) 
